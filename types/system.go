@@ -6,13 +6,19 @@ import (
 	"time"
 )
 
+type SystemType string
+
 func (t *SystemType) Validate() error {
 	return nil
 }
 
+type SystemID uuid.UUID
+
 func (i SystemID) Validate() error {
 	return nil
 }
+
+type SystemName string
 
 func (n SystemName) Validate() error {
 	if len(n) == 0 {
@@ -21,6 +27,8 @@ func (n SystemName) Validate() error {
 	return nil
 }
 
+type SystemCleaningIntervalInDays int16
+
 func (c SystemCleaningIntervalInDays) Validate() error {
 	if c < 1 {
 		return errors.New("cleaning interval needs to be >= 1")
@@ -28,15 +36,11 @@ func (c SystemCleaningIntervalInDays) Validate() error {
 	return nil
 }
 
+type SystemLastCleaned time.Time
+
 func (l SystemLastCleaned) Validate() error {
 	return nil
 }
-
-type SystemType string
-type SystemID uuid.UUID
-type SystemName string
-type SystemCleaningIntervalInDays int16
-type SystemLastCleaned time.Time
 
 const (
 	Unknown     SystemType = "unknown"
