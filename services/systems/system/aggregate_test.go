@@ -1,8 +1,8 @@
 package system_test
 
 import (
-	"github.com/anchamber/lab/systems/system"
-	"github.com/anchamber/lab/types"
+	"github.com/anchamber/lab/libs/types"
+	"github.com/anchamber/lab/services/systems/system"
 	"testing"
 	"time"
 )
@@ -16,7 +16,7 @@ func TestNew(t *testing.T) {
 		lastCleaned      types.SystemLastCleaned
 	}{
 		{
-			name:             "create valid system",
+			name:             "create valid lines",
 			systemName:       types.SystemName(""),
 			systemType:       types.Techniplast,
 			cleaningInterval: types.SystemCleaningIntervalInDays(25),

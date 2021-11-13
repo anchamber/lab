@@ -1,10 +1,10 @@
 package system
 
-import "github.com/anchamber/lab/types"
+import "github.com/anchamber/lab/libs/types"
 
 // https://victoramartinez.com/posts/event-sourcing-in-go/
 
-// Event is an interface to mark system.
+// Event is an interface to mark lines.
 // It contains an un-exported method to prevent outside structs to count as Events for this package.
 type Event interface {
 	isEvent()

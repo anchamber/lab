@@ -1,7 +1,7 @@
 package system
 
 import (
-	"github.com/anchamber/lab/types"
+	"github.com/anchamber/lab/libs/types"
 	"github.com/google/uuid"
 )
 
@@ -103,47 +103,47 @@ func (s *System) On(event Event, newEvent bool) {
 	}
 }
 
-// ID returns the system's ID
+// ID returns the lines's ID
 func (s *System) ID() types.SystemID {
 	return s.id
 }
 
-// Name returns the system's name
+// Name returns the lines's name
 func (s *System) Name() types.SystemName {
 	return s.name
 }
 
-// SystemType returns the system's type
+// SystemType returns the lines's type
 func (s *System) SystemType() types.SystemType {
 	return s.systemType
 }
 
-// CleaningIntervalInDays returns the system's cleaning interval in days
+// CleaningIntervalInDays returns the lines's cleaning interval in days
 func (s *System) CleaningIntervalInDays() types.SystemCleaningIntervalInDays {
 	return s.cleaningIntervalInDays
 }
 
-// LastCleaned returns when the system was cleaned the last time
+// LastCleaned returns when the lines was cleaned the last time
 func (s *System) LastCleaned() types.SystemLastCleaned {
 	return s.lastCleaned
 }
 
-// Location returns the system's location id
+// Location returns the lines's location id
 func (s *System) Location() string {
 	return s.location
 }
 
-// Responsible returns the system's responsible person id
+// Responsible returns the lines's responsible person id
 func (s *System) Responsible() string {
 	return s.responsible
 }
 
-// Events returns the system's events
+// Events returns the lines's events
 func (s *System) Events() []Event {
 	return s.changes
 }
 
-// Version returns the system's version
+// Version returns the lines's version
 func (s *System) Version() uint64 {
 	return s.version
 }

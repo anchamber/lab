@@ -91,7 +91,7 @@ services:
 
   systems-service:
     build:
-      context: ./systems
+      context: services/systems
       dockerfile: Dockerfile
     container_name: systems-service
     environment:
