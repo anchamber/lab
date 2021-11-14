@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "lines",
+    srcs = [
+        "aggregate.go",
+        "events.go",
+    ],
+    importpath = "github.com/anchamber/lab/services/lines/lines",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//libs/types",
+        "@com_github_google_uuid//:uuid",
+    ],
+)
+
+go_test(
+    name = "lines_test",
+    srcs = ["aggregate_test.go"],
+    deps = ["//libs/types"],
+)

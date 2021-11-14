@@ -1,1 +1,6 @@
 .idea/
+
+bazel-bin
+bazel-lab
+bazel-out
+bazel-testlogs

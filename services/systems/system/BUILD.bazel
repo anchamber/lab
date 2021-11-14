@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "system",
+    srcs = [
+        "aggregate.go",
+        "events.go",
+    ],
+    importpath = "github.com/anchamber/lab/services/systems/system",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//libs/types",
+        "@com_github_google_uuid//:uuid",
+    ],
+)
+
+go_test(
+    name = "system_test",
+    srcs = ["aggregate_test.go"],
+    deps = [
+        ":system",
+        "//libs/types",
+    ],
+)

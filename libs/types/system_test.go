@@ -1,7 +1,7 @@
 package types_test
 
 import (
-	"github.com/anchamber/lab/types"
+	"github.com/anchamber/lab/libs/types"
 	"testing"
 )
 

@@ -6,6 +6,9 @@ Therefore, technology and design decisions will be made just to try  them out an
 The Service is developed with DDD in mind and event sourcing. The services will expose an gRPC API to the outside. 
 A frontend application will be developed with Flutter.
 
+## References
+- [go monorepo](https://medium.com/goc0de/how-to-golang-monorepo-4f62320a01fd)
+
 ## Domain Model
 
 There are different roles which may have different views for the entities.

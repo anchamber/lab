@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "types",
+    srcs = [
+        "domain.go",
+        "line.go",
+        "system.go",
+    ],
+    importpath = "github.com/anchamber/lab/libs/types",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_google_uuid//:uuid"],
+)
+
+go_test(
+    name = "types_test",
+    srcs = ["system_test.go"],
+    embed  = [":types"],
+)
