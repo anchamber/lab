@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"github.com/EventStore/EventStore-Client-Go/esdb"
-	"github.com/google/uuid"
+	"github.com/pborman/uuid"
 )
 
 func main() {
@@ -25,7 +25,7 @@ func main() {
 		Id            string
 		ImportantData string
 	}{
-		Id:            uuid.Must(uuid.NewUUID()).String(),
+		Id:            uuid.NewUUID().String(),
 		ImportantData: "Connected to eventstore",
 	}
 

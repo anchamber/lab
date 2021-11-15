@@ -2,7 +2,7 @@ package types
 
 import (
 	"errors"
-	"github.com/google/uuid"
+	"github.com/pborman/uuid"
 )
 
 type LineName string

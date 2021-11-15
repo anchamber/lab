@@ -9,11 +9,11 @@ go_library(
     ],
     importpath = "github.com/anchamber/lab/libs/types",
     visibility = ["//visibility:public"],
-    deps = ["@com_github_google_uuid//:uuid"],
+    deps = ["@com_github_pborman_uuid//:uuid"],
 )
 
 go_test(
     name = "types_test",
     srcs = ["system_test.go"],
-    embed  = [":types"],
+    deps = [":types"],
 )

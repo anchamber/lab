@@ -10,7 +10,7 @@ go_library(
     visibility = ["//visibility:private"],
     deps = [
         "@com_github_eventstore_eventstore_client_go//esdb",
-        "@com_github_google_uuid//:uuid",
+        "@com_github_pborman_uuid//:uuid",
     ],
 )
 

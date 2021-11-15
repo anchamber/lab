@@ -2,7 +2,7 @@ package lines
 
 import (
 	"github.com/anchamber/lab/libs/types"
-	"github.com/google/uuid"
+	"github.com/pborman/uuid"
 )
 
 type Line struct {

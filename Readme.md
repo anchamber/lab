@@ -8,6 +8,7 @@ A frontend application will be developed with Flutter.
 
 ## References
 - [go monorepo](https://medium.com/goc0de/how-to-golang-monorepo-4f62320a01fd)
+- [go monorepo part 2](https://medium.com/goc0de/golang-monorepo-part-2-b6724148f0e1)
 
 ## Domain Model
 

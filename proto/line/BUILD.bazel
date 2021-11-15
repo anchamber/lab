@@ -1,0 +1,22 @@
+load("@rules_proto_grpc//go:defs.bzl", "go_proto_library", "go_grpc_library")
+
+proto_library(
+    name = "line_proto",
+    srcs = ["line.proto"],
+    visibility = ["//visibility:public"],
+)
+
+#go_proto_compile(
+#    name = "line_go_proto",
+#    protos = [":line_proto"],
+#)
+
+go_proto_library(
+    name = "line_go_proto",
+    compiler = "@io_bazel_rules_go//proto:go_grpc",
+    importpath = "github.com/anchamber/lab/proto/line",
+    protos = [
+        ":line_proto",
+    ],
+    visibility = ["//visibility:public"],
+)

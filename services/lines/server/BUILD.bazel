@@ -1,0 +1,26 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@rules_proto_grpc//go:defs.bzl", "go_grpc_library")
+
+go_grpc_library(
+    name = "line_grpc",
+    importpath = "github.com/anchamber/lab/proto/line",
+    protos = ["//proto/line:line_proto"],
+)
+
+
+go_library(
+    name = "server",
+    srcs = ["server.go"],
+    importpath = "github.com/anchamber/lab/services/lines/server",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":line_grpc",
+    ],
+)
+
+#go_test(
+#    name = "go_default_test",
+#    srcs = ["server_test.go"],
+#    embed = [":go_default_library"],
+#    deps = ["@com_github_stretchr_testify//require:go_default_library"],
+#)

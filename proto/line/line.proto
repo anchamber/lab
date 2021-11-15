@@ -1,0 +1,44 @@
+syntax = "proto3";
+option go_package = "github.com/anchamber/lab/proto/line";
+
+package line.proto;
+
+service Line {
+  rpc CreateLine(CreateLineRequest) returns (CreateLineResponse);
+  rpc ActivateLine(ActivateLineRequest) returns (ActivateLineResponse);
+  rpc DeactivateLine(DeactivateLineRequest) returns (DeactivateLineResponse);
+  rpc DeleteLine(DeleteLineRequest) returns (DeleteLineResponse);
+}
+
+message CreateLineRequest {
+  string name = 1;
+}
+
+message CreateLineResponse {
+  string id = 1;
+  string name = 2;
+}
+
+message ActivateLineRequest {
+  string id = 1;
+}
+
+message ActivateLineResponse {
+  string id = 1;
+}
+
+message DeactivateLineRequest {
+  string id = 1;
+}
+
+message DeactivateLineResponse {
+  string id = 1;
+}
+
+message DeleteLineRequest {
+  string id = 1;
+}
+
+message DeleteLineResponse {
+  string id = 1;
+}
