@@ -1,16 +1,23 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@rules_proto_grpc//go:defs.bzl", "go_grpc_library")
+
+go_grpc_library(
+    name = "line_grpc",
+    importpath = "github.com/anchamber/lab/proto/line",
+    protos = ["//proto/line:line_proto"],
+)
 
 go_library(
     name = "lines_lib",
-    srcs = [
-        "config.go",
-        "main.go",
-    ],
+    srcs = ["main.go"],
     importpath = "github.com/anchamber/lab/services/lines",
     visibility = ["//visibility:private"],
     deps = [
+        ":line_grpc",
+        "//services/lines/server",
         "@com_github_eventstore_eventstore_client_go//esdb",
-        "@com_github_google_uuid//:uuid",
+        "@com_github_pborman_uuid//:uuid",
+        "@org_golang_google_grpc//:go_default_library",
     ],
 )
 
